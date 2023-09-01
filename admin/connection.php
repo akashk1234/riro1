@@ -1,10 +1,9 @@
 <?php 
-session_start();
 $conn=mysqli_connect('localhost','root','','riro','3306');
  
 function insert($qry){
-  $res=mysqli_query($GLOBALS['con'],$qry);
-  return mysqli_insert_id($GLOBALS['con']);
+  $res=mysqli_query($GLOBALS['conn'],$qry);
+  return mysqli_insert_id($GLOBALS['conn']);
  }
 
 function select($qry){
@@ -14,7 +13,7 @@ return $result;
 }
 
 function update($q){
-mysqli_query($GLOBALS['con'],$q);
+mysqli_query($GLOBALS['conn'],$q);
 }
 
 function redirect($url){?>
@@ -29,7 +28,7 @@ echo "<script> alert('$msg')</script>";
 }
 
 function delete($qry){
-$res=mysqli_query($GLOBALS['con'],$qry);
+$res=mysqli_query($GLOBALS['conn'],$qry);
 return$res;
 }
 
