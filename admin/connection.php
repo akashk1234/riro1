@@ -29,7 +29,7 @@ echo "<script> alert('$msg')</script>";
 
 function delete($qry){
 $res=mysqli_query($GLOBALS['conn'],$qry);
-return$res;
+return $res;
 }
 
 ?>

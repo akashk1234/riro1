@@ -3,7 +3,6 @@ session_start();
 include 'connection.php';
 
 if (isset($_POST['save'])) {
-  $checkBox = implode(', ', $_POST['size']);
   extract($_POST);
   $dir = "../images/admin";
   $file = basename($_FILES['image']['name']);
@@ -11,44 +10,24 @@ if (isset($_POST['save'])) {
   $target = $dir . uniqid("images_") . "." . $file_type;
 
   if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
-      // Create a new PDO connection (adjust the connection details as needed)
-      $pdo = new PDO("mysql:host=localhost;dbname=riro", "root", "");
 
-      // Define the SQL query with placeholders
-      $sql = "INSERT INTO product (product_name, product_image, product_price, product_desc, cat_id, size) 
-              VALUES (:name, :target, :price, :desc, :category, :checkBox)";
-
-      // Prepare the SQL statement
-      $stmt = $pdo->prepare($sql);
-
-      // Bind parameters
-      $stmt->bindParam(':name', $name);
-      $stmt->bindParam(':target', $target);
-      $stmt->bindParam(':price', $price);
-      $stmt->bindParam(':desc', $desc);
-      $stmt->bindParam(':category', $category);
-      $stmt->bindParam(':checkBox', $checkBox);
-
-      // Execute the prepared statement
-      if ($stmt->execute()) {
-          alert('Product added successfully');
-          redirect("Products.php");
-      } else {
-          echo "Product adding error occurred";
-      }
+    $q = "INSERT INTO gallery (image, name) VALUES ('$target', '$name')";
+    insert($q);
+    alert('Image added successfully');
+    redirect("gallery.php");
   } else {
-      echo "File upload error occurred";
-    }
+    echo "Image adding error occurred";
+  }
 }
 
 
 
 if (isset($_GET['did'])) {
   extract($_GET);
-  $q = "DELETE FROM product WHERE product_id='$did'";
-  delete($q);
-  alert('Product deleted successfully!');
-  redirect('Products.php');
+  $q = "DELETE FROM gallery WHERE id='$did'";
+  delete( $q);
+  alert('Image deleted successfully!');
+  redirect('gallery.php');
 }
 ?>
 
@@ -81,8 +60,6 @@ if (isset($_GET['did'])) {
 </head>
 
 <body>
-
-
   <div class="container-scroller">
     <!-- partial:partials/_sidebar.html -->
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
@@ -237,79 +214,63 @@ if (isset($_GET['did'])) {
 
         <div class="content-wrapper">
 
-        <div class="row">
-  <div class="col-lg-12 grid-margin stretch-card">
-    <div class="card">
-      <div class="card-body">
-        <h4 class="card-title">Products</h4>
-        <a class="nav-link btn btn-success create-new-button mb-5 mt-5" data-toggle="modal"
-          data-target="#addModal" aria-expanded="false" href="#">+ Add New Product</a>
+          <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Gallery</h4>
+                  <a class="nav-link btn btn-success create-new-button mb-5 mt-5" data-toggle="modal"
+                    data-target="#addModal" aria-expanded="false" href="#">+ Add Image</a>
 
-        <div class="table-responsive">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th> No.</th>
-                <th> Category Name </th>
-                <th> Product Image </th>
-                <th> Product Name </th>
-                <th> Product Price </th>
-                <th> Product Description </th>
-                <th> Available sizes </th>
-                <th> Edit </th>
-                <th> Delete </th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php
-              $q = "select * from product inner join category using(cat_id)";
-              $res = select($q);
-              $i = 1;
-              foreach ($res as $row) {
-              ?>
-                <tr>
-                  <td>
-                    <?php echo $i++ ?>
-                  </td>
-                  <td>
-                    <?php echo $row['cat_name'] ?>
-                  </td>
-                  <td class="py-1 p-4">
-                    <img style="border-radius: 0px; width: 100px; height: 120px;"
-                      src="<?php echo $row['product_image'] ?>" alt="image" />
-                  </td>
-                  <td>
-                    <?php echo $row['product_name'] ?>
-                  </td>
-                  <td>
-                    <?php echo $row['product_price'] ?>
-                  </td>
-                  <td>
-                    <p style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px;"><?php echo $row['product_desc'] ?></p>
-                  </td>
-                  <td>
-                    <?php echo $row['size'] ?>
-                  </td>
-                  <td><button type="button" class="btn btn-outline-warning" data-toggle="modal"
-                      data-target="#updateModal"><i class="fa-regular fa-pen-to-square"></i>Update</button></td>
-                  <td><button type="button" class="btn btn-outline-danger"><a
-                        href="?did=<?php echo $row['product_id'] ?>" style="color: inherit;"
-                        onclick="return confirm('Are you sure you want to delete this item?');"><i
-                          class="fa-solid fa-trash"></i>Delete</a></button></td>
-                </tr>
-              <?php
-              }
-              ?>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-              
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th> No.</th>
+                          <th>  Name </th>
+                          <th>  Image </th>
+                          <th> Delete </th>
+                          
+
+                        </tr>
+                      </thead>
+                      <tbody>
+                       
+                      <?php 
+                      $q= "select * from gallery";
+                      $res= select($q);
+                      $i=1;
+                      foreach($res as $row){
+                      ?>
+                          <tr>
+                            <td>
+                              <?php echo $i++ ?>
+                            </td>
+                            <td>
+                              <?php echo $row['name'] ?>
+                            </td>
+
+                            <td class="py-1 p-4">
+                              <img style="border-radius: 0px; width: 200px; height: 200px;"
+                                src="<?php echo $row['image'] ?>" alt="image" />
+                            </td>
 
 
+                            
+                            <td><button type="button" class="btn btn-outline-danger"><a
+                                  href="?did=<?php echo $row['id'] ?>" style="color: inherit;"
+                                  onclick="return confirm('Are you sure you want to delete this item?');"><i
+                                    class="fa-solid fa-trash"></i>Delete</a></button></td>
+                          </tr>
+                      <?php } ?>
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div id="updateModalContainer"></div>
 
           <!-- modal.html -->
@@ -317,7 +278,7 @@ if (isset($_GET['did'])) {
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title">Add Product</h5>
+                  <h5 class="modal-title">Add Image</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true" class="btn btn-danger">&times;</span>
                   </button>
@@ -325,129 +286,21 @@ if (isset($_GET['did'])) {
                 <div class="modal-body">
                   <!-- Input fields for updating information -->
                   <form method="POST" enctype="multipart/form-data">
+                    
                     <div class="form-group">
-                      <select class="form-select form-control text-white" name="category"
-                        aria-label="Default select example">
-                        <option selected>Select Category</option>
-                        <?php
-                        $q = "select * from category";
-                        $res = select($q);
-                        foreach ($res as $row) {
-                          ?>
-                          <option value="<?php echo $row['cat_id'] ?>"><?php echo $row['cat_name'] ?></option>
-                          <?php
-                        }
-                        ?>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label for="field1">Product image</label>
+                      <label for="field1">Gallery image</label>
                       <input type="file" name="image" class="form-control text-white" id="field1">
                     </div>
                     <div class="form-group">
-                      <label for="field2">Product name</label>
+                      <label for="field2">Name</label>
                       <input type="text" name="name" class="form-control text-white" id="field2"
-                        placeholder="Enter product name">
+                        placeholder="Enter image name">
                     </div>
-                    <div class="form-group">
-                      <label for="field2">Product Price</label>
-                      <input type="text" name="price" class="form-control text-white" id="field2"
-                        placeholder="Enter product price">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleFormControlTextarea1">Product Description</label>
-                      <textarea class="form-control text-white" name="desc" id="exampleFormControlTextarea1" rows="3"
-                        placeholder="Enter Product description"></textarea>
-                    </div>
+                    
 
-                    <div class="container mb-3">
-                      <p style="color:gray;">Select Available Sizes</p>
-
-                      <div class="row ms-5">
-                        <div class="col-6">
-                          <div class="form-check">
-                            <input class="form-check-input" name="size[]" type="checkbox" value="S"
-                              id="flexCheckDefault1">
-                            <label class="form-check-label" for="flexCheckDefault1">
-                              S
-                            </label>
-                          </div>
-                        </div>
-                        <div class="col-6">
-                          <div class="form-check">
-                            <input class="form-check-input" name="size[]" type="checkbox" value="M"
-                              id="flexCheckChecked1">
-                            <label class="form-check-label" for="flexCheckChecked1">
-                              M
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col-6">
-                          <div class="form-check">
-                            <input class="form-check-input" name="size[]" type="checkbox" value="L"
-                              id="flexCheckDefault2">
-                            <label class="form-check-label" for="flexCheckDefault2">
-                              L
-                            </label>
-                          </div>
-                        </div>
-                        <div class="col-6">
-                          <div class="form-check">
-                            <input class="form-check-input" name="size[]" type="checkbox" value="XL"
-                              id="flexCheckChecked2">
-                            <label class="form-check-label" for="flexCheckChecked2">
-                              XL
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col-6">
-                          <div class="form-check">
-                            <input class="form-check-input" name="size[]" type="checkbox" value="XXL"
-                              id="flexCheckChecked3">
-                            <label class="form-check-label" for="flexCheckChecked3">
-                              XXL
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                      <hr style="border-top: 1px dashed gray;">
-
-
-                      <p style="color:gray;">Select Dhoti Type</p>
-
-                      <div class="row">
-                        <div class="col-6">
-                          <div class="form-check">
-                            <input class="form-check-input" name="size[]" type="checkbox" value="Single"
-                              id="flexCheckDefault2">
-                            <label class="form-check-label" for="flexCheckDefault2">
-                              Single
-                            </label>
-                          </div>
-                        </div>
-                        <div class="col-6">
-                          <div class="form-check">
-                            <input class="form-check-input" name="size[]" type="checkbox" value="Double"
-                              id="flexCheckChecked2">
-                            <label class="form-check-label" for="flexCheckChecked2">
-                              Double
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-
-
-
+ 
                     <div class="modal-footer">
-                      <button type="submit" name="save" class="btn btn-primary">Add Product</button>
+                      <button type="submit" name="save" class="btn btn-primary">Add Image</button>
                       <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     </div>
                   </form>
@@ -463,13 +316,7 @@ if (isset($_GET['did'])) {
               .then(data => {
                 document.getElementById('addModalContainer').innerHTML = data;
               });
-
-            // Load update product modal content using JavaScript
-            fetch('modals/update-product.html')
-              .then(response => response.text())
-              .then(data => {
-                document.getElementById('updateModalContainer').innerHTML = data;
-              });
+           
           </script>
         </div>
 

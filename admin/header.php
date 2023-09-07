@@ -44,10 +44,11 @@
               </a>
               <div class="collapse" id="website-management">
                   <ul class="nav flex-column sub-menu">
-                      <li class="nav-item"> <a class="nav-link" href="slider.html">Slider</a></li>
-                      <li class="nav-item"> <a class="nav-link" href="privacy-policy.html">Privacy Policy</a></li>
-                      <li class="nav-item"> <a class="nav-link" href="refund-policy.html">Refund Policy</a></li>
-                      <li class="nav-item"> <a class="nav-link" href="terms-of-use.html">Terms of use</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="slider.php">Slider</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="gallery.php">Gallery</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="privacy-policy.php">Privacy Policy</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="refund-policy.php">Refund Policy</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="terms-of-use.php">Terms of use</a></li>
                   </ul>
               </div>
           </li>
@@ -63,8 +64,8 @@
               </a>
               <div class="collapse" id="product-management">
                   <ul class="nav flex-column sub-menu">
-                      <li class="nav-item"> <a class="nav-link" href="category.html">Category</a></li>
-                      <li class="nav-item"> <a class="nav-link" href="Products.html">Product</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="category.php">Category</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="Products.php">Product</a></li>
                   </ul>
               </div>
           </li>
@@ -80,9 +81,9 @@
               </a>
               <div class="collapse" id="order-management">
                   <ul class="nav flex-column sub-menu">
-                      <li class="nav-item"> <a class="nav-link" href="new-orders.html">New Orders</a></li>
-                      <li class="nav-item"> <a class="nav-link" href="shipped-orders.html">Shipped Orders</a></li>
-                      <li class="nav-item"> <a class="nav-link" href="delivered-orders.html">Delivered Orders</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="new-orders.php">New Orders</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="shipped-orders.php">Shipped Orders</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="delivered-orders.php">Delivered Orders</a></li>
                   </ul>
               </div>
           </li>

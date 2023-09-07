@@ -1,3 +1,5 @@
+<?php include 'connection.php' ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,14 +40,15 @@
 <body class="animsition">
 	
 	<!-- Header -->
-	<header class="header-v4">
+	<header class="header-v1">
 		<!-- Header desktop -->
-		<div class="container-menu-desktop">
-			<!-- Topbar -->
+		<div class="container-menu-desktop trans-03">
+
+
 			<div class="top-bar">
 				<div class="content-topbar flex-sb-m h-full container">
 					<div class="left-top-bar">
-						Free shipping for standard order over $100
+						Some text here
 					</div>
 
 					<div class="right-top-bar flex-w h-full">
@@ -57,39 +60,29 @@
 							My Account
 						</a>
 
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							EN
-						</a>
-
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							USD
-						</a>
+						
 					</div>
 				</div>
 			</div>
-
-			<div class="wrap-menu-desktop how-shadow1">
-				<nav class="limiter-menu-desktop container">
+			
+			<div class="wrap-menu-desktop">
+				<nav class="limiter-menu-desktop p-l-45">
 					
 					<!-- Logo desktop -->		
 					<a href="#" class="logo">
-						<img src="images/icons/logo-01.png" alt="IMG-LOGO">
+						<img src="images/icons/riro_logo.png" alt="IMG-LOGO">
 					</a>
 
 					<!-- Menu desktop -->
 					<div class="menu-desktop">
 						<ul class="main-menu">
-							<li>
-								<a href="index.html">Home</a>
-								<ul class="sub-menu">
-									<li><a href="index.html">Homepage 1</a></li>
-									<li><a href="home-02.html">Homepage 2</a></li>
-									<li><a href="home-03.html">Homepage 3</a></li>
-								</ul>
+							<li class="active-menu">
+								<a href="index.php">Home</a>
+								
 							</li>
 
 							<li>
-								<a href="product.html">Shop</a>
+								<a href="product.php">Shop</a>
 							</li>
 
 							<li class="label1" data-label1="hot">
@@ -97,7 +90,7 @@
 							</li>
 
 							<li>
-								<a href="blog.html">Blog</a>
+								<a href="gallery.php">Gallery</a>
 							</li>
 
 							<li>
@@ -111,18 +104,24 @@
 					</div>	
 
 					<!-- Icon header -->
-					<div class="wrap-icon-header flex-w flex-r-m">
-						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
-							<i class="zmdi zmdi-search"></i>
+					<div class="wrap-icon-header flex-w flex-r-m h-full">
+						<div class="flex-c-m h-full p-r-24">
+							<div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-11 js-show-modal-search">
+								<i class="zmdi zmdi-search"></i>
+							</div>
 						</div>
-
-						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
-							<i class="zmdi zmdi-shopping-cart"></i>
+							
+						<div class="flex-c-m h-full p-l-18 p-r-25 bor5">
+							<div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-11 icon-header-noti js-show-cart" data-notify="2">
+								<i class="zmdi zmdi-shopping-cart"></i>
+							</div>
 						</div>
-
-						<a href="#" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
-							<i class="zmdi zmdi-favorite-outline"></i>
-						</a>
+							
+						<div class="flex-c-m h-full p-lr-19">
+							<div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-11 js-show-sidebar">
+								<i class="zmdi zmdi-menu"></i>
+							</div>
+						</div>
 					</div>
 				</nav>
 			</div>	
@@ -132,22 +131,22 @@
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->		
 			<div class="logo-mobile">
-				<a href="index.html"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
+				<a href="index.php"><img src="images/icons/favicon.png" alt="IMG-LOGO" ></a>
 			</div>
 
 			<!-- Icon header -->
-			<div class="wrap-icon-header flex-w flex-r-m m-r-15">
-				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
-					<i class="zmdi zmdi-search"></i>
+			<div class="wrap-icon-header flex-w flex-r-m h-full m-r-15">
+				<div class="flex-c-m h-full p-r-10">
+					<div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-11 js-show-modal-search">
+						<i class="zmdi zmdi-search"></i>
+					</div>
 				</div>
 
-				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="2">
-					<i class="zmdi zmdi-shopping-cart"></i>
+				<div class="flex-c-m h-full p-lr-10 bor5">
+					<div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-11 icon-header-noti js-show-cart" data-notify="2">
+						<i class="zmdi zmdi-shopping-cart"></i>
+					</div>
 				</div>
-
-				<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="0">
-					<i class="zmdi zmdi-favorite-outline"></i>
-				</a>
 			</div>
 
 			<!-- Button show menu -->
@@ -161,34 +160,6 @@
 
 		<!-- Menu Mobile -->
 		<div class="menu-mobile">
-			<ul class="topbar-mobile">
-				<li>
-					<div class="left-top-bar">
-						Free shipping for standard order over $100
-					</div>
-				</li>
-
-				<li>
-					<div class="right-top-bar flex-w h-full">
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							Help & FAQs
-						</a>
-
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							My Account
-						</a>
-
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							EN
-						</a>
-
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							USD
-						</a>
-					</div>
-				</li>
-			</ul>
-
 			<ul class="main-menu-m">
 				<li>
 					<a href="index.html">Home</a>
@@ -328,7 +299,7 @@
 
 
 	<!-- breadcrumb -->
-	<div class="container">
+	<div class="container mt-5">
 		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
 			<a href="index.html" class="stext-109 cl8 hov-cl1 trans-04">
 				Home
@@ -348,6 +319,12 @@
 		
 
 	<!-- Product Detail -->
+	<?php
+	$id= $_GET["id"];
+	$q= "select * from product where product_id=$id";
+	$res= select($q);
+	?>
+	
 	<section class="sec-product-detail bg0 p-t-65 p-b-60">
 		<div class="container">
 			<div class="row">
@@ -358,31 +335,31 @@
 							<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
 
 							<div class="slick3 gallery-lb">
-								<div class="item-slick3" data-thumb="images/product-detail-01.jpg">
+								<div class="item-slick3" data-thumb="<?php echo $res[0]['product_image'] ?>">
 									<div class="wrap-pic-w pos-relative">
-										<img src="images/product-detail-01.jpg" alt="IMG-PRODUCT">
+										<img src="<?php echo $res[0]['product_image'] ?>" alt="IMG-PRODUCT">
 
-										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-01.jpg">
+										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="<?php echo $res[0]['product_image'] ?>">
 											<i class="fa fa-expand"></i>
 										</a>
 									</div>
 								</div>
 
-								<div class="item-slick3" data-thumb="images/product-detail-02.jpg">
+								<div class="item-slick3" data-thumb="<?php echo $res[0]['product_image'] ?>">
 									<div class="wrap-pic-w pos-relative">
-										<img src="images/product-detail-02.jpg" alt="IMG-PRODUCT">
+										<img src="<?php echo $res[0]['product_image'] ?>" alt="IMG-PRODUCT">
 
-										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-02.jpg">
+										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="<?php echo $res[0]['product_image'] ?>">
 											<i class="fa fa-expand"></i>
 										</a>
 									</div>
 								</div>
 
-								<div class="item-slick3" data-thumb="images/product-detail-03.jpg">
+								<div class="item-slick3" data-thumb="<?php echo $res[0]['product_image'] ?>">
 									<div class="wrap-pic-w pos-relative">
-										<img src="images/product-detail-03.jpg" alt="IMG-PRODUCT">
+										<img src="<?php echo $res[0]['product_image'] ?>" alt="IMG-PRODUCT">
 
-										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-03.jpg">
+										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="<?php echo $res[0]['product_image'] ?>">
 											<i class="fa fa-expand"></i>
 										</a>
 									</div>
@@ -391,19 +368,20 @@
 						</div>
 					</div>
 				</div>
-					
+				
+				
 				<div class="col-md-6 col-lg-5 p-b-30">
 					<div class="p-r-50 p-t-5 p-lr-0-lg">
 						<h4 class="mtext-105 cl2 js-name-detail p-b-14">
-							Lightweight Jacket
+							<?php echo $res[0]['product_name']; ?>
 						</h4>
 
 						<span class="mtext-106 cl2">
-							$58.79
+							₹<?php echo $res[0]['product_price'] ?>
 						</span>
 
 						<p class="stext-102 cl3 p-t-23">
-							Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.
+							<?php echo $res[0]['product_desc'] ?>
 						</p>
 						
 						<!--  -->
@@ -427,7 +405,11 @@
 								</div>
 							</div>
 
-							<div class="flex-w flex-r-m p-b-10">
+
+
+							<!-- color selection -->
+
+							<!-- <div class="flex-w flex-r-m p-b-10">
 								<div class="size-203 flex-c-m respon6">
 									Color
 								</div>
@@ -444,7 +426,7 @@
 										<div class="dropDownSelect2"></div>
 									</div>
 								</div>
-							</div>
+							</div> -->
 
 							<div class="flex-w flex-r-m p-b-10">
 								<div class="size-204 flex-w flex-m respon6-next">

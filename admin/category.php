@@ -18,6 +18,16 @@ if (isset($_POST['save'])) {
         echo "File uploading error occurred";
     }
 } 
+
+
+
+if (isset($_GET['did'])){
+  extract($_GET);
+  $q= "DELETE FROM category WHERE cat_id='$did'";
+  delete($q);
+  alert('Category deleted successfully!');
+  redirect('category.php');
+}
 ?>
 
 
@@ -202,7 +212,7 @@ if (isset($_POST['save'])) {
                     <div class="card">
                       <div class="card-body">
                         <h4 class="card-title">Categories</h4>
-                        <a class="nav-link btn btn-success create-new-button mb-5 mt-5" data-toggle="modal" data-target="#addCategory " aria-expanded="false" href="#">+ Add New Slider</a>
+                        <a class="nav-link btn btn-success create-new-button mb-5 mt-5" data-toggle="modal" data-target="#addCategory " aria-expanded="false" href="#">+ Add New Category</a>
 
                         </p>
                         <div class="table-responsive">
@@ -235,7 +245,7 @@ if (isset($_POST['save'])) {
                                 <td><?php echo $row['cat_name'] ?></td>
                                 
                                 <td><button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#updateModal"><i class="fa-regular fa-pen-to-square"></i>Update</button></td>
-                                <td><button type="button" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i>Delete</button></td>
+                                <td><button type="button"  class="btn btn-outline-danger"><a href="?did=<?php echo $row['cat_id'] ?>" style="color: inherit;" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fa-solid fa-trash"></i>Delete</a></button></td>
                               </tr>
                               <?php 
                               }
@@ -272,7 +282,11 @@ if (isset($_POST['save'])) {
                                <label for="field2">Category name</label>
                                <input type="text" name="catname" class="form-control text-white" id="field2" placeholder="Enter category name">
                            </div>
+
+                           
+
                        </div>
+                       
                        <div class="modal-footer">
                            <button type="submit" name="save" class="btn btn-primary">Add Category</button>
                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>

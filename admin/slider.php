@@ -4,13 +4,13 @@ include 'connection.php';
 
 if (isset($_POST['save'])) {
     extract($_POST);
-    $dir = "assets/admin/slider/";
+    $dir = "../images/admin";
     $file = basename($_FILES['img']['name']);
     $file_type = strtolower(pathinfo($file, PATHINFO_EXTENSION));
     $target = $dir . uniqid("images_") . "." . $file_type;
     
     if (move_uploaded_file($_FILES['img']['tmp_name'], $target)) {
-        $q = "INSERT INTO slider (name, image) VALUES ('$name', '$target')";
+        $q = "INSERT INTO slider (text1, text2, image) VALUES ('$text1', '$text2', '$target')";
         insert($q);
         alert('Slide added successfully');
         redirect("slider.php");
@@ -56,8 +56,12 @@ if (isset($_GET['did'])){
                 <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
               </div>
               <div class="form-group">
-                <label for="exampleInputPassword1">Image name</label>
-                <input type="text"  class="form-control text-white" name="name" id="exampleInputPassword1" placeholder="Enter Image name">
+                <label for="exampleInputPassword1">Slider text 1</label>
+                <input type="text"  class="form-control text-white" name="text1" id="exampleInputPassword1" placeholder="Enter slider text 1">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Slider text 2</label>
+                <input type="text"  class="form-control text-white" name="text2" id="exampleInputPassword1" placeholder="Enter slider text 2">
               </div>
            
               <button type="submit" name="save" class="btn btn-primary">Submit</button>
@@ -288,7 +292,8 @@ if (isset($_GET['did'])){
                         <tr>
                           <th>Index</th>
                           <th> Image </th>
-                          <th> Slide name </th>
+                          <th> Slide text 1 </th>
+                          <th> Slide text 2 </th>
                           <th> Edit </th>
                           <th> Delete </th>
                         </tr>
@@ -306,7 +311,9 @@ if (isset($_GET['did'])){
                           
                             <img src="<?php echo $row['image']; ?>" height="250" width="250" style="border-radius:0px">
                           </td>
-                          <td><?php echo $row['name']; ?></td>
+                          <td><?php echo $row['text1']; ?></td>
+                          <td><?php echo $row['text2']; ?></td>
+
                           
                           <td><button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#updateModal"><i class="fa-regular fa-pen-to-square"></i>Update</button></td>
                           <td><button type="button"  class="btn btn-outline-danger"><a href="?did=<?php echo $row['slider_id'] ?>" style="color: inherit;" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fa-solid fa-trash"></i>Delete</a></button></td>
