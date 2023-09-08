@@ -363,7 +363,7 @@ include 'connection.php'
 		</div>
 	</section>
 
-	<!-- Blog -->
+	<!-- Gallery -->
 	<?php 
 	$q= "select * from gallery order by id desc";
 	$res= select($q)
@@ -412,6 +412,12 @@ include 'connection.php'
 			</div>
 		</div>
 	</section>
+
+	<div class="bg-danger">
+		
+
+	</div>
+
 
 
 	<!-- Footer -->
