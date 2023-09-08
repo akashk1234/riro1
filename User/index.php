@@ -163,7 +163,7 @@ include 'connection.php'
 					<div class="block1 wrap-pic-w">
 						<img src="images/banner-dhotis.jpg" alt="IMG-BANNER">
 
-						<a href="product.php" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+						<a href="product.ph" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 							<div class="block1-txt-child1 flex-col-l">
 								<span class="block1-name ltext-102 trans-04 p-b-8">
 								Dhotis
@@ -238,7 +238,7 @@ include 'connection.php'
 							<div class="block2-pic hov-img0">
 								<img src="<?php echo $row['product_image']; ?>" alt="IMG-PRODUCT">
 	
-								<a href="product-details.php?id=<?php echo $row['product_id']; ?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+								<a href="product-details.php?id=<?php echo $row['product_id']; ?>&cid=<?php echo $row['cat_id']; ?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
 									View
 								</a>
 							</div>

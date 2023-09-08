@@ -246,7 +246,7 @@ include 'connection.php';
 						<div class="block2-pic hov-img0">
 							<img src="<?php echo $row['product_image'] ?>" alt="IMG-PRODUCT">
 
-							<a href="product-details.php?id=<?php echo $row['product_id']; ?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
+							<a href="product-details.php?id=<?php echo $row['product_id']; ?>&cid=<?php echo $row['cat_id'];?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
 								 View
 							</a>
 						</div>
