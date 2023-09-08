@@ -196,7 +196,7 @@
 				<p class="stext-107 cl6 txt-center">
 
 					Copyright &copy;
-					<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i
+					<script>document.write(new Date().getFullYear());</script> RIRO Textiles |  All rights reserved | Made with <i
 						class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://ictglobaltech.com/"
 						target="_blank">ICT Global Tech</a>
 
