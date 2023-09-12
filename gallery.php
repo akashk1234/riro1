@@ -67,7 +67,7 @@
 				<div class="col-md-4 col-lg-4">
 					<div class="p-b-63">
 						<a href="" class="hov-img0 how-pos5-parent">
-							<img src="<?php echo $row['image'] ?>" alt="IMG">
+							<img src="uploads/<?php echo $row['image'] ?>" alt="IMG">
 
 						</a>
 					</div>

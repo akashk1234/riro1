@@ -79,7 +79,7 @@
                 <div class="card">
                   <div class="card-body">
                     <h5 style="color: #00d25b;">(10)</h5>
-                    <a href="Products.html" style="color: white; text-decoration: none;">
+                    <a href="Products.php" style="color: white; text-decoration: none;">
                       <div class="row">
                           <div class="col-8 col-sm-12 col-xl-8 my-auto">
                             <div class="d-flex d-sm-block d-md-flex align-items-center">

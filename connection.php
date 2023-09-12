@@ -1,6 +1,5 @@
 <?php 
 
-//  $conn=mysqli_connect('localhost','jndoors','Jn_doorhouse@123','jndoors','3306');
 $conn=mysqli_connect('localhost','root','','riro','3306');
  
  function insert($qry){

@@ -44,7 +44,7 @@ include 'connection.php'
 <body class="animsition">
 
 	<!-- Header -->
-	<?php include 'publicheader.php' ?>
+	<?php include 'publicheader.php'?>
 
 	<!-- cart -->
 	<?php include 'cart-side.php' ?>
@@ -146,10 +146,10 @@ include 'connection.php'
 					<div class="block1 wrap-pic-w">
 						<img src="images/banner-shirts.jpg" alt="IMG-BANNER">
 
-						<a href="product.php"
+						<a href="shirts.php"
 							class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
+								<span class="block1-name ltext-103 trans-04 p-b-8">
 									Shirts
 								</span>
 
@@ -172,10 +172,10 @@ include 'connection.php'
 					<div class="block1 wrap-pic-w">
 						<img src="images/banner-dhotis.jpg" alt="IMG-BANNER">
 
-						<a href="product.php"
+						<a href="dhotis.php"
 							class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
+								<span class="block1-name ltext-103 trans-04 p-b-8">
 									Dhotis
 								</span>
 
@@ -193,6 +193,10 @@ include 'connection.php'
 						</a>
 					</div>
 				</div>
+
+
+
+
 			</div>
 		</div>
 	</div>
@@ -246,7 +250,7 @@ include 'connection.php'
 							<!-- Block2 -->
 							<div class="block2">
 								<div class="block2-pic hov-img0">
-									<img src="<?php echo $row['product_image']; ?>" alt="IMG-PRODUCT">
+									<img src="uploads/<?php echo $row['product_image']; ?>" alt="IMG-PRODUCT">
 
 									<a href="product-details.php?id=<?php echo $row['product_id']; ?>&cid=<?php echo $row['cat_id']; ?>"
 										class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
@@ -287,13 +291,116 @@ include 'connection.php'
 			</div>
 
 			<!-- Load more -->
-			<div class="flex-c-m flex-w w-full p-t-45">
-				<a href="product.php" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
+			<div class="flex-c-m flex-w w-full ">
+				<a href="dhotis.php" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
 					View More
 				</a>
 			</div>
 		</div>
 	</section>
+
+
+	<section class="bg-img1 txt-center p-lr-15 " style="background-image: url('images/banner000.jpeg');">
+		<h2 class="ltext-105 cl0 txt-center p-tb-150">
+			&nbsp;
+		</h2>
+	</section>	
+
+
+	<div class="sec-banner bg0 p-t-20  p-b-55">
+		
+		<div class="container">
+		
+			<div class="row">
+				
+
+				<div class="col-md-6 col-lg-4 p-b-30 m-lr-auto">
+					<!-- Block1 -->
+					<div class="block1 wrap-pic-w">
+						<img src="images/tissue1.jpg" alt="IMG-BANNER">
+
+						<a href="tissue-dhoti.php"
+							class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+							<div class="block1-txt-child1 flex-col-l">
+								<span class="block1-name ltext-101 trans-04 p-b-8">
+									Tissue Dhoti
+								</span>
+
+								<span class="block1-info stext-102 trans-04">
+									New Collection
+								</span>
+							</div>
+
+							<div class="block1-txt-child2 p-b-4 trans-05">
+								<div class="block1-link stext-101 cl0 trans-09">
+									Shop Now
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+
+				<div class="col-md-6 col-lg-4 p-b-30 m-lr-auto">
+					<!-- Block1 -->
+					<div class="block1 wrap-pic-w">
+						<img src="images/color_dhoti.jpg" alt="IMG-BANNER">
+
+						<a href="colour-dhoti.php"
+							class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+							<div class="block1-txt-child1 flex-col-l">
+								<span class="block1-name ltext-101 trans-04 p-b-8">
+									Colour Dhoti
+								</span>
+
+								<span class="block1-info stext-102 trans-04">
+								New Collection
+								</span>
+							</div>
+
+							<div class="block1-txt-child2 p-b-4 trans-05">
+								<div class="block1-link stext-101 cl0 trans-09">
+									Shop Now
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+
+				<div class="col-md-6 col-lg-4 p-b-30 m-lr-auto">
+					<!-- Block1 -->
+					<div class="block1 wrap-pic-w">
+						<img src="images/iyer.jpg" alt="IMG-BANNER">
+
+						<a href="iyer-dhoti.php"
+							class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+							<div class="block1-txt-child1 flex-col-l">
+								<span class="block1-name ltext-101 trans-04 p-b-8">
+									Iyer Dhoti
+								</span>
+
+								<span class="block1-info stext-102 trans-04">
+								New Collection
+								</span>
+							</div>
+
+							<div class="block1-txt-child2 p-b-4 trans-05">
+								<div class="block1-link stext-101 cl0 trans-09">
+									Shop Now
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+
+				
+
+			</div>
+		</div>
+	</div>
+
+
+
+
 
 	<!-- Gallery -->
 	<?php
@@ -310,7 +417,7 @@ include 'connection.php'
 					<div class="blog-item">
 						<div class="hov-img0">
 							<a href="">
-								<img src="<?php echo $res[0]['image'] ?>" alt="IMG">
+								<img src="uploads/<?php echo $res[0]['image'] ?>" alt="IMG">
 							</a>
 						</div>
 
@@ -322,7 +429,7 @@ include 'connection.php'
 					<div class="blog-item">
 						<div class="hov-img0">
 							<a href="">
-								<img src="<?php echo $res[1]['image'] ?>" alt="IMG">
+								<img src="uploads/<?php echo $res[1]['image'] ?>" alt="IMG">
 							</a>
 						</div>
 
@@ -334,7 +441,7 @@ include 'connection.php'
 					<div class="blog-item">
 						<div class="hov-img0">
 							<a href=" ">
-								<img src="<?php echo $res[2]['image'] ?>" alt="IMG">
+								<img src="uploads/<?php echo $res[2]['image'] ?>" alt="IMG">
 							</a>
 						</div>
 
@@ -345,81 +452,164 @@ include 'connection.php'
 		</div>
 	</section>
 
+
+
+
+	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/banner000.jpeg');">
+		<h2 class="ltext-105 cl0 txt-center p-tb-150">
+			&nbsp;
+		</h2>
+	</section>	
+
+
+	<div class="sec-banner bg0 p-t-95 p-b-55">
+		
+		<div class="container">
+		
+			<div class="row">
+				
+
+				<div class="col-md-6 col-lg-4 p-b-30 m-lr-auto">
+					<!-- Block1 -->
+					<div class="block1 wrap-pic-w">
+						<img src="images/towel.jpg" alt="IMG-BANNER">
+
+						<a href="towel.php"
+							class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+							<div class="block1-txt-child1 flex-col-l">
+								<span class="block1-name ltext-101 trans-04 p-b-8">
+									Towel
+								</span>
+
+								<span class="block1-info stext-102 trans-04">
+									New Collection
+								</span>
+							</div>
+
+							<div class="block1-txt-child2 p-b-4 trans-05">
+								<div class="block1-link stext-101 cl0 trans-09">
+									Shop Now
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+
+				<div class="col-md-6 col-lg-4 p-b-30 m-lr-auto">
+					<!-- Block1 -->
+					<div class="block1 wrap-pic-w">
+						<img src="images/turbon.jpg" alt="IMG-BANNER">
+
+						<a href="turbon.php"
+							class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+							<div class="block1-txt-child1 flex-col-l">
+								<span class="block1-name ltext-101 trans-04 p-b-8">
+									Turbon
+								</span>
+
+								<span class="block1-info stext-102 trans-04">
+								New Collection
+								</span>
+							</div>
+
+							<div class="block1-txt-child2 p-b-4 trans-05">
+								<div class="block1-link stext-101 cl0 trans-09">
+									Shop Now
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+
+				
+
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
 	<div class="container text-center mb-5">
 
-    <div id="mobile-carousel" class="carousel slide d-md-none" data-ride="carousel" data-interval="1500">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#mobile-carousel" data-slide-to="0" class="active"></li>
-            <li data-target="#mobile-carousel" data-slide-to="1"></li>
-            <li data-target="#mobile-carousel" data-slide-to="2"></li>
-        </ol>
+		<div id="mobile-carousel" class="carousel slide d-md-none" data-ride="carousel" data-interval="1500">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#mobile-carousel" data-slide-to="0" class="active"></li>
+				<li data-target="#mobile-carousel" data-slide-to="1"></li>
+				<li data-target="#mobile-carousel" data-slide-to="2"></li>
+			</ol>
 
-        <!-- Slides -->
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <h1><i class="fa fa-truck"></i></h1>
-                        <h4>FREE SHIPPING</h4>
-						<p>For All Prepaid Orders</p>
+			<!-- Slides -->
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<div class="row">
+						<div class="col-sm-12">
+							<h1><i class="fa fa-truck"></i></h1>
+							<h4>FREE SHIPPING</h4>
+							<p>For All Prepaid Orders</p>
 
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <h1><i class="fa fa-money"></i></h1>
-                        <h4>CASH ON DELIVERY</h4>
-						<p>Pay By Cash On Delivery</p>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="row">
+						<div class="col-sm-12">
+							<h1><i class="fa fa-money"></i></h1>
+							<h4>CASH ON DELIVERY</h4>
+							<p>Pay By Cash On Delivery</p>
 
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <h1><i class="fa fa-lock"></i></h1>
-                        <h4>SAFE PAYMENTS</h4>
-						<p>Secure Payment Methods</p>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="row">
+						<div class="col-sm-12">
+							<h1><i class="fa fa-lock"></i></h1>
+							<h4>SAFE PAYMENTS</h4>
+							<p>Secure Payment Methods</p>
 
-                    </div>
-                </div>
-            </div>
-        </div>
+						</div>
+					</div>
+				</div>
+			</div>
 
-        <!-- Controls -->
-        <a class="carousel-control-prev" href="#mobile-carousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#mobile-carousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
+			<!-- Controls -->
+			<a class="carousel-control-prev" href="#mobile-carousel" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#mobile-carousel" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
 
-    <!-- Display non-carousel version for larger screens -->
-    <div class="row d-none d-md-flex text-dark">
-        <div class="col-md-4 col-sm-6 col-lg-4">
-            <h1><i class="fa fa-truck"></i></h1>
-            <h4 class="">FREE SHIPPING</h4>
-			<p>For All Prepaid Orders</p>
-        </div>
-        <div class="col-md-4 col-sm-6 col-lg-4">
-            <h1><i class="fa fa-money"></i></h1>
-            <h4>CASH ON DELIVERY</h4>
-			<p>Pay By Cash On Delivery</p>
-        </div>
-        <div class="col-md-4 col-sm-6 col-lg-4">
-            <h1><i class="fa fa-lock"></i></h1>
-            <h4>SAFE PAYMENTS</h4>
-			<p>Secure Payment Methods</p>
-        </div>
-    </div>
+		<!-- Display non-carousel version for larger screens -->
+		<div class="row d-none d-md-flex text-dark">
+			<div class="col-md-4 col-sm-6 col-lg-4">
+				<h1><i class="fa fa-truck"></i></h1>
+				<h4 class="">FREE SHIPPING</h4>
+				<p>For All Prepaid Orders</p>
+			</div>
+			<div class="col-md-4 col-sm-6 col-lg-4">
+				<h1><i class="fa fa-money"></i></h1>
+				<h4>CASH ON DELIVERY</h4>
+				<p>Pay By Cash On Delivery</p>
+			</div>
+			<div class="col-md-4 col-sm-6 col-lg-4">
+				<h1><i class="fa fa-lock"></i></h1>
+				<h4>SAFE PAYMENTS</h4>
+				<p>Secure Payment Methods</p>
+			</div>
+		</div>
 
-</div>
+	</div>
 
 
 
